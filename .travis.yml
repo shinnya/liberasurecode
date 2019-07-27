@@ -17,6 +17,7 @@ script:
 matrix:
   allow_failures:
     # Clang on macOS
+  include:
     - os: osx
       osx_image: xcode10.2
     - os: osx
