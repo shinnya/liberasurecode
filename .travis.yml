@@ -25,13 +25,6 @@ env:
   - RUSTFLAGS="-D warnings"
 
 addons:
-  apt:
-    packages:
-      - make
-      - autoconf
-      - autoconf-archive
-      - automake
-      - libtool
   homebrew:
     update: true
     packages:
@@ -54,6 +47,11 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.8
+            - make
+            - autoconf
+            - autoconf-archive
+            - automake
+            - libtool
       env:
          - MATRIX_EVAL="CC=gcc-4.8 CXX=g++-4.8" # for conservative distributions
     # Clang on macOS
