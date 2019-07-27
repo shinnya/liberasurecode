@@ -7,16 +7,8 @@
 +
 +# Check if a compiler supports "-Wno-error=address-of-packed-member"
 +# If it supports the option, we add it to CFLAGS.
-+ac_save_CFLAGS="$CFLAGS"
-+AC_LANG_PUSH([C])
-+CFLAGS="-Wno-error=address-of-packed-member"
-+AC_COMPILE_IFELSE([AC_LANG_PROGRAM([],[[]])],
-+[ac_c_recognize_address_of_packed_member=1],
-+[ac_c_recognize_address_of_packed_member=0])
-+AC_LANG_POP([C])
-+AS_IF([test $ac_c_recognize_address_of_packed_member -eq 1],
-+[CFLAGS="$ac_save_CFLAGS -Wno-error=address-of-packed-member"],
-+[CFLAGS="$ac_save_CFLAGS"])
++AX_CHECK_COMPILER_FLAG([-Wno-error=address-of-packed-member],
++       [CFLAGS="$CFLAGS -Wno-error=address-of-packed-member"])
 +
  AC_PROG_LIBTOOL
  AC_PROG_CXX
