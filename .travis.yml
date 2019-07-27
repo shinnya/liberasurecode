@@ -32,6 +32,13 @@ addons:
       - autoconf-archive
       - automake
       - libtool
+  homebrew:
+    packages:
+      - make
+      - autoconf
+      - autoconf-archive
+      - automake
+      - libtool
 
 matrix:
   allow_failures:
