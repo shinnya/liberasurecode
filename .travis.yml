@@ -15,7 +15,6 @@ before_install:
   - eval "${MATRIX_EVAL}"
   - echo "CC=$CC"
   - echo "CXX=$CXX"
-  - sudo apt install -y make autoconf autoconf-archive automake libtool
 
 script:
   - cargo test -- --test-threads=1
@@ -24,6 +23,15 @@ script:
 env:
   global:
   - RUSTFLAGS="-D warnings"
+
+addons:
+  apt:
+    packages:
+      - make
+      - autoconf
+      - autoconf-archive
+      - automake
+      - libtool
 
 matrix:
   allow_failures:
