@@ -25,6 +25,13 @@ env:
   - RUSTFLAGS="-D warnings"
 
 addons:
+  apt:
+    packages:
+      - make
+      - autoconf
+      - autoconf-archive
+      - automake
+      - libtool
   homebrew:
     update: true
     packages:
