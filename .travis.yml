@@ -12,9 +12,9 @@ before_script:
 
 before_install:
   - echo "MATRIX_EVAL=${MATRIX_EVAL}"
+  - eval "${MATRIX_EVAL}"
   - echo "CC=$CC"
   - echo "CXX=$CXX"
-  - eval "${MATRIX_EVAL}"
 
 script:
   - cargo test -- --test-threads=1
