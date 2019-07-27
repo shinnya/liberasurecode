@@ -15,6 +15,7 @@ before_install:
   - eval "${MATRIX_EVAL}"
   - echo "CC=$CC"
   - echo "CXX=$CXX"
+  - sudo apt-get install -y make autoconf autoconf-archive automake libtool
 
 script:
   - cargo test -- --test-threads=1
