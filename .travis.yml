@@ -33,6 +33,7 @@ addons:
       - automake
       - libtool
   homebrew:
+    update: true
     packages:
       - make
       - autoconf
