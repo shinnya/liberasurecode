@@ -1,15 +1,16 @@
---- a/configure.ac	2019-04-19 16:27:52.000000000 +0900
-+++ b/configure.ac	2019-04-19 16:26:06.000000000 +0900
-@@ -39,6 +39,20 @@ AC_PROG_LN_S
- dnl Compiling with per-target flags requires AM_PROG_CC_C_O.
- AC_PROG_CC
- AM_PROG_CC_C_O
-+
+diff --git a/configure.ac b/configure.ac
+index 16d4dc4..6614878 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -146,6 +146,11 @@ fi
+ AC_SUBST(GCOV_FLAGS)
+ AC_SUBST(GCOV_LDFLAGS)
+ 
 +# Check if a compiler supports "-Wno-error=address-of-packed-member"
 +# If it supports the option, we add it to CFLAGS.
-+AX_CHECK_COMPILER_FLAG([-Wno-error=address-of-packed-member],
-+       [CFLAGS="$CFLAGS -Wno-error=address-of-packed-member"])
++AX_CHECK_COMPILE_FLAG([-Wno-error=address-of-packed-member],
++                      [CFLAGS="${CFLAGS} -Wno-error=address-of-packed-member"])
 +
- AC_PROG_LIBTOOL
- AC_PROG_CXX
- AC_PROG_INSTALL
+ dnl Expand the sources and objects needed to build the library
+ AC_SUBST(ac_aux_dir)
+ AC_SUBST(OBJECTS)
