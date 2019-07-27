@@ -5,6 +5,8 @@ set -eux
 BUILD_DIR=$PWD
 MAKE_FLAGS=""
 
+printenv
+
 # Please try and add other distributions.
 case "$(uname)" in
     "Linux") MAKE_FLAGS="-j$(nproc)";;
